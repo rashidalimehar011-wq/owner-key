@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
+# YouTube Trend Analyzer - By: Rashid Ali Mehar
+
+import sys
 import requests
 from datetime import datetime
+
+# ═══ APPROVAL CHECK ═══
+sys.path.insert(0, ".")
+try:
+    from check_approval import verify
+    verify()
+except ImportError:
+    print("⚠️  Approval system nahi mila")
+    print("   Chalao: python check_approval.py")
+    sys.exit(1)
+# ═════════════════════
 
 API_KEY = "AIzaSyBZos08xMm6VrgWjFENRzEq60vhPuuItX0"
 
@@ -31,7 +45,6 @@ def get_trending():
         
         if "error" in data:
             print(f"API Error: {data['error']['message']}")
-            print("\nTip: Nayi key banao aur restriction hatao.")
             return
         
         items = data.get("items", [])
