@@ -14,21 +14,29 @@ BANNER = """
 ╚═══════════════════════════════════════════╝
 """
 
+# ✅ DEFAULT APPROVED KEYS (code ke andar)
+DEFAULT_KEYS = [
+    "Rashid@2024",      # Owner - Rashid Ali Mehar
+    "DOST123",          # Dost 1
+    "ALI456",           # Dost 2
+    "AHMED789",         # Dost 3
+]
+
 def load_keys():
     """Approved keys load karo"""
-    keys = []
-    key_file = os.path.join(os.path.dirname(__file__), "owner_keys.txt")
+    keys = list(DEFAULT_KEYS)  # Default keys se shuru karo
     
+    # Agar local owner_keys.txt mojood hai, uski keys bhi add karo
+    key_file = os.path.join(os.path.dirname(__file__), "owner_keys.txt")
     try:
         with open(key_file, "r") as f:
             for line in f:
                 line = line.strip()
-                # Comment aur khali lines skip karo
                 if line and not line.startswith("#"):
-                    keys.append(line)
+                    if line not in keys:
+                        keys.append(line)
     except FileNotFoundError:
-        print("⚠️  owner_keys.txt nahi mili!")
-        return []
+        pass  # File nahi hai to koi masla nahi
     
     return keys
 
@@ -43,7 +51,7 @@ def verify():
     keys = load_keys()
     
     if entered in keys:
-        # Check karo owner hai ya guest
+        # Owner check
         if entered == "Rashid@2024":
             print("\n✅ Welcome, Owner! 👑")
         else:
