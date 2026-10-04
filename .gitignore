@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 keys.txt
 .env
+owner_keys.txt
