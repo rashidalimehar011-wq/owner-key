@@ -49,4 +49,4 @@ echo "► Ab tool start ho raha hai..."
 echo "► Approval ke liye WhatsApp par message jayega"
 echo ""
 
-python yt_live.py
+python menu.py
