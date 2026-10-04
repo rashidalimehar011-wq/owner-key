@@ -1,0 +1,42 @@
+#!/usr/bi/env python3
+# ═══════════════════════════════════════════
+#     👑  OWNER-KEY  👑
+#     Made by: [AAPKA NAAM]
+#     GitHub: github.com/YOUR_USERNAME
+# ═══════════════════════════════════════════
+
+import os
+import sys
+
+BANNER = """
+╔═══════════════════════════════════════╗
+║   👑  OWNER-KEY  👑                   ║
+║   Private Tool                        ║
+╚═══════════════════════════════════════╝
+"""
+
+def check_owner():
+    """Owner approval system"""
+    owner_pass = "YOUR_OWNER_PASSWORD_HERE"  # apna password daalo
+    
+    print(BANNER)
+    print("🔐 Owner Verification Required")
+    entered = input("Enter Owner Key: ").strip()
+    
+    if entered != owner_pass:
+        print("\n❌ Access Denied! Ye tool sirf Owner ke liye hai.")
+        sys.exit(1)
+    
+    print("\n✅ Welcome, Owner! 👑\n")
+
+def main():
+    check_owner()
+    
+    print("► Tool ready.")
+    print("► Folder:", os.getcwd())
+    print("")
+    # Yahan aap apna kaam likho
+    print("✅ Kaam mukammal.")
+
+if __name__ == "__main__":
+    main()
