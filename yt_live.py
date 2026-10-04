@@ -1,32 +1,27 @@
 #!/usr/bin/env python3
-# YouTube Trend Analyzer - By: Rashid Ali Mehar
+# YouTube Trend Analyzer
+# By: Rashid Ali Mehar
 
 import sys
 import requests
 from datetime import datetime
 
-# ═══ APPROVAL CHECK ═══
+# APPROVAL CHECK
 sys.path.insert(0, ".")
 try:
-    from check_approval import verify
-    verify()
+    from whatsapp_approval import main as approval_main
+    approval_main()
 except ImportError:
-    print("⚠️  Approval system nahi mila")
-    print("   Chalao: python check_approval.py")
+    print("Approval system nahi mila")
     sys.exit(1)
-# ═════════════════════
 
 API_KEY = "AIzaSyBZos08xMm6VrgWjFENRzEq60vhPuuItX0"
 
-BANNER = """
-=======================================
-   YOUTUBE TREND ANALYZER
-   By: Rashid Ali Mehar
-=======================================
-"""
-
 def get_trending():
-    print(BANNER)
+    print("=======================================")
+    print("   YOUTUBE TREND ANALYZER")
+    print("   By: Rashid Ali Mehar")
+    print("=======================================\n")
     print(f"Fetching... {datetime.now().strftime('%d %b %Y, %I:%M %p')}")
     print("Region: Pakistan\n")
     

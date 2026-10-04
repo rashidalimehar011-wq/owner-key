@@ -19,7 +19,6 @@ DEFAULT_KEYS = [
     "Rashid@2024",      # Owner - Rashid Ali Mehar
     "DOST123",          # Dost 1
     "ALI456",           # Dost 2
-    "AHMED789",         # Dost 3
 ]
 
 def load_keys():
