@@ -1,74 +1,46 @@
-# 📊 Social Media Trend Analyzer
+# YouTube Trend Analyzer
 
-**By: Rashid Ali Mehar**
+By: Rashid Ali Mehar
 
-Ek AI-powered tool jo **real-time social media trends** analyze karta hai — Google aur YouTube se live data fetch karke batata hai ke **aaj kya trend kar raha hai**.
+Ek real-time tool jo Pakistan ke trending YouTube videos dikhata hai.
 
----
+## One-Click Install
 
-## 🎯 Ye Tool Kya Karta Hai?
+Apne Termux mein sirf ye ek command chalao:
 
-Ye tool 3 tarah ke trends analyze karta hai:
+pkg install curl -y && bash <(curl -sL https://raw.githubusercontent.com/rashidalimehar011-wq/owner-key/main/install.sh)
 
-| File | Kya Karta Hai |
-|------|---------------|
-| `yt_live.py` | **YouTube** ke live trending videos (Pakistan) |
-| `livetrend.py` | **Google Search** ke live trending topics (Pakistan) |
-| `trendai.py` | **Demo** analysis (offline, bina internet) |
-| `main.py` | Owner verification system (password protected) |
+## Approval
 
----
+Tool chalane par aapko 2 options milenge:
 
-## 🚀 Install Kaise Karein?
+[A] WhatsApp pe approval maango
+[B] Mere paas Access Key hai
 
-```bash
-# 1. Repo clone karo
-git clone https://github.com/rashidalimehar011-wq/owner-key.git
-cd owner-key
+Option A: WhatsApp Approval
+- A daalo
+- WhatsApp khulega
+- Owner ko message jayega: +92 332 1408595
+- Owner aapko key de dega
 
-# 2. Required libraries install karo
-pip install requests
+Option B: Access Key
+- B daalo
+- Key daalo
+- Tool chal jayega
 
-# 3. Tool chalao
-python yt_live.py
-python yt_live.py
-python livetrend.py
-python trendai.py
-cd ~/owner-key
-cat > approval.py << 'ENDOFFILE'
-#!/usr/bin/env python3
-# ═══════════════════════════════════════════
-#     👑  OWNER APPROVAL SYSTEM  👑
-#     By: Rashid Ali Mehar
-# ═══════════════════════════════════════════
+## Features
 
-import sys
+- yt_live.py - YouTube trending
+- livetrend.py - Google trends
+- trendai.py - Demo analysis
+- whatsapp_approval.py - WhatsApp approval
 
-# ⚠️ YAHAN APNA PASSWORD DAALO
-OWNER_KEY = "Rashid@2024"
+## Owner
 
-BANNER = """
-╔═══════════════════════════════════════════╗
-║   👑  OWNER APPROVAL REQUIRED  👑         ║
-║   By: Rashid Ali Mehar                    ║
-╚═══════════════════════════════════════════╝
-"""
+Rashid Ali Mehar
+- GitHub: @rashidalimehar011-wq
+- WhatsApp: +92 332 1408595
 
-def verify_owner():
-    print(BANNER)
-    print("🔐 Ye tool sirf Owner ke liye hai.")
-    print("")
-    
-    entered = input("Enter Owner Key: ").strip()
-    
-    if entered != OWNER_KEY:
-        print("")
-        print("❌ Access Denied!")
-        print("   Ye tool sirf Rashid Ali Mehar use kar sakte hain.")
-        print("")
-        sys.exit(1)
-    
-    print("")
-    print("✅ Welcome, Owner! 👑")
-    print("► Tool start ho raha hai...")
-    print("")
+## License
+
+Educational purpose only.
